@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 8 – JavaScript Functions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<h1>Chapter 8: JavaScript Functions</h1>
+
+<h2>What is a Function?</h2>
+<p>
+A function is a reusable block of code designed to perform
+a specific task. Functions help in code reusability,
+modularity, and readability.
+</p>
+
+<hr>
+
+<h2>Function Syntax</h2>
+<pre>
+function functionName(parameters) {
+  // code to execute
+}
+</pre>
+
+<h3>Example:</h3>
+<pre>
+function greet() {
+  console.log("Welcome to JavaScript");
+}
+greet();
+</pre>
+
+<hr>
+
+<h2>Function with Parameters</h2>
+<p>
+Parameters are used to pass values to a function.
+</p>
+
+<h3>Example:</h3>
+<pre>
+function add(a, b) {
+  console.log(a + b);
+}
+add(5, 3);   // Output: 8
+</pre>
+
+<hr>
+
+<h2>Function with Return Statement</h2>
+<p>
+The <strong>return</strong> statement sends a value back to
+the function caller and stops function execution.
+</p>
+
+<h3>Example:</h3>
+<pre>
+function multiply(a, b) {
+  return a * b;
+}
+
+let result = multiply(4, 5);
+console.log(result);   // Output: 20
+</pre>
+
+<hr>
+
+<h2>Types of Functions</h2>
+
+<h3>1. Function Declaration</h3>
+<pre>
+function square(num) {
+  return num * num;
+}
+</pre>
+
+<h3>2. Function Expression</h3>
+<pre>
+let square = function(num) {
+  return num * num;
+};
+</pre>
+
+<hr>
+
+<h2>Arrow Functions</h2>
+<p>
+Arrow functions provide a shorter syntax for writing functions.
+</p>
+
+<h3>Example:</h3>
+<pre>
+let add = (a, b) => a + b;
+console.log(add(10, 5));  // Output: 15
+</pre>
+
+<hr>
+
+<h2>Benefits of Functions</h2>
+<ul>
+  <li>Code reusability</li>
+  <li>Easy debugging</li>
+  <li>Better program structure</li>
+</ul>
+
+<hr>
+
+<h2>Summary</h2>
+<ul>
+  <li>Functions are reusable blocks of code</li>
+  <li>They can accept parameters and return values</li>
+  <li>Arrow functions provide shorter syntax</li>
+</ul>
+
+</body>
+</html>

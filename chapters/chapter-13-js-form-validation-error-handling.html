@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 13 – JavaScript Form Validation & Error Handling</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<h1>Chapter 13: JavaScript Form Validation & Error Handling</h1>
+
+<h2>What is Form Validation?</h2>
+<p>
+Form validation is the process of checking user input before
+submitting data to the server. It helps ensure correct,
+complete, and secure data.
+</p>
+
+<hr>
+
+<h2>Why Form Validation is Important?</h2>
+<ul>
+  <li>Prevents invalid data submission</li>
+  <li>Improves user experience</li>
+  <li>Reduces server load</li>
+  <li>Enhances application security</li>
+</ul>
+
+<hr>
+
+<h2>Client-Side Form Validation</h2>
+<p>
+Client-side validation is performed in the browser using JavaScript
+before the data is sent to the server.
+</p>
+
+<h3>Simple Validation Example</h3>
+<pre>
+&lt;form onsubmit="return validateForm()"&gt;
+  &lt;input type="text" id="username" placeholder="Username"&gt;
+  &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;script&gt;
+function validateForm() {
+  let user = document.getElementById("username").value;
+  if (user === "") {
+    alert("Username is required");
+    return false;
+  }
+  return true;
+}
+&lt;/script&gt;
+</pre>
+
+<hr>
+
+<h2>Validating Multiple Fields</h2>
+<pre>
+function validateForm() {
+  let email = document.getElementById("email").value;
+  let password = document.getElementById("password").value;
+
+  if (email === "" || password === "") {
+    alert("All fields are mandatory");
+    return false;
+  }
+  return true;
+}
+</pre>
+
+<hr>
+
+<h2>Email Validation Using Regex</h2>
+<pre>
+function validateEmail(email) {
+  let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+  return pattern.test(email);
+}
+</pre>
+
+<hr>
+
+<h2>Error Handling in JavaScript</h2>
+<p>
+Error handling is used to manage runtime errors
+and prevent application crashes.
+</p>
+
+<hr>
+
+<h2>try – catch – finally</h2>
+
+<h3>Syntax</h3>
+<pre>
+try {
+  // code that may cause error
+} catch (error) {
+  // handle error
+} finally {
+  // always executes
+}
+</pre>
+
+<h3>Example</h3>
+<pre>
+try {
+  let x = y + 10;
+} catch (err) {
+  console.log("Error occurred:", err.message);
+} finally {
+  console.log("Execution completed");
+}
+</pre>
+
+<hr>
+
+<h2>Throwing Custom Errors</h2>
+<pre>
+function checkAge(age) {
+  if (age < 18) {
+    throw "Age must be 18 or above";
+  }
+  return "Access granted";
+}
+
+try {
+  console.log(checkAge(15));
+} catch (e) {
+  console.log(e);
+}
+</pre>
+
+<hr>
+
+<h2>Summary</h2>
+<ul>
+  <li>Form validation checks user input</li>
+  <li>JavaScript performs client-side validation</li>
+  <li>Error handling prevents crashes</li>
+  <li>try–catch manages runtime errors</li>
+</ul>
+
+</body>
+</html>

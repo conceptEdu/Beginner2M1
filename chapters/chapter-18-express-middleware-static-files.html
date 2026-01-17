@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 18 – Express Middleware & Static Files</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<h1>Chapter 18: Express Middleware & Static Files</h1>
+
+<h2>What is Middleware?</h2>
+<p>
+Middleware is a function that runs between the request
+and the response cycle. It has access to the request (req),
+response (res), and next() function.
+</p>
+
+<hr>
+
+<h2>Why Middleware is Used?</h2>
+<ul>
+  <li>Modify request and response objects</li>
+  <li>Authentication & authorization</li>
+  <li>Logging requests</li>
+  <li>Error handling</li>
+</ul>
+
+<hr>
+
+<h2>Middleware Flow</h2>
+<p>
+Request → Middleware → Route → Response
+</p>
+
+<hr>
+
+<h2>Creating a Custom Middleware</h2>
+<pre>
+const express = require("express");
+const app = express();
+
+const logger = (req, res, next) => {
+  console.log("Request URL:", req.url);
+  next();
+};
+
+app.use(logger);
+
+app.get("/", (req, res) => {
+  res.send("Home Page");
+});
+
+app.listen(3000);
+</pre>
+
+<hr>
+
+<h2>Types of Middleware</h2>
+<ul>
+  <li>Application-level middleware</li>
+  <li>Router-level middleware</li>
+  <li>Built-in middleware</li>
+  <li>Error-handling middleware</li>
+</ul>
+
+<hr>
+
+<h2>Built-in Middleware</h2>
+
+<h3>express.json()</h3>
+<p>Used to parse incoming JSON requests.</p>
+<pre>
+app.use(express.json());
+</pre>
+
+<h3>express.urlencoded()</h3>
+<p>Used to parse form data.</p>
+<pre>
+app.use(express.urlencoded({ extended: true }));
+</pre>
+
+<hr>
+
+<h2>Static Files in Express</h2>
+<p>
+Static files are files like HTML, CSS, images, and JavaScript
+that are served directly to the client.
+</p>
+
+<h3>Serving Static Files</h3>
+<pre>
+app.use(express.static("public"));
+</pre>
+
+<p>
+If the <code>public</code> folder contains:
+</p>
+<ul>
+  <li>index.html</li>
+  <li>style.css</li>
+  <li>script.js</li>
+</ul>
+
+<p>
+They can be accessed directly from the browser.
+</p>
+
+<hr>
+
+<h2>Error Handling Middleware</h2>
+<pre>
+app.use((err, req, res, next) => {
+  res.status(500).send("Something went wrong!");
+});
+</pre>
+
+<hr>
+
+<h2>Summary</h2>
+<ul>
+  <li>Middleware controls request–response flow</li>
+  <li>Custom and built-in middleware are used</li>
+  <li>Static files are served using express.static()</li>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 6 – JavaScript Control Statements</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<h1>Chapter 6: JavaScript Control Statements</h1>
+
+<h2>What are Control Statements?</h2>
+<p>
+Control statements are used to control the flow of execution
+of a program based on conditions. They help in decision making
+and executing different blocks of code.
+</p>
+
+<hr>
+
+<h2>Types of Control Statements</h2>
+<ul>
+  <li>Conditional Statements</li>
+  <li>Switch Statement</li>
+</ul>
+
+<hr>
+
+<h2>1. if Statement</h2>
+<p>
+The <strong>if</strong> statement executes a block of code
+only when the given condition is true.
+</p>
+
+<h3>Syntax:</h3>
+<pre>
+if (condition) {
+  // code to execute
+}
+</pre>
+
+<h3>Example:</h3>
+<pre>
+let age = 20;
+
+if (age >= 18) {
+  console.log("Eligible to vote");
+}
+</pre>
+
+<hr>
+
+<h2>2. if–else Statement</h2>
+<p>
+The <strong>if–else</strong> statement executes one block
+when the condition is true and another block when it is false.
+</p>
+
+<h3>Syntax:</h3>
+<pre>
+if (condition) {
+  // true block
+} else {
+  // false block
+}
+</pre>
+
+<h3>Example:</h3>
+<pre>
+let number = 5;
+
+if (number % 2 === 0) {
+  console.log("Even number");
+} else {
+  console.log("Odd number");
+}
+</pre>
+
+<hr>
+
+<h2>3. if–else if–else Statement</h2>
+<p>
+This statement is used to test multiple conditions.
+</p>
+
+<h3>Example:</h3>
+<pre>
+let marks = 75;
+
+if (marks >= 90) {
+  console.log("Grade A");
+} else if (marks >= 60) {
+  console.log("Grade B");
+} else {
+  console.log("Grade C");
+}
+</pre>
+
+<hr>
+
+<h2>4. switch Statement</h2>
+<p>
+The <strong>switch</strong> statement is used to execute
+one block of code from multiple options based on a value.
+</p>
+
+<h3>Syntax:</h3>
+<pre>
+switch(expression) {
+  case value1:
+    // code
+    break;
+  case value2:
+    // code
+    break;
+  default:
+    // default code
+}
+</pre>
+
+<h3>Example:</h3>
+<pre>
+let day = 3;
+
+switch(day) {
+  case 1:
+    console.log("Monday");
+    break;
+  case 2:
+    console.log("Tuesday");
+    break;
+  case 3:
+    console.log("Wednesday");
+    break;
+  default:
+    console.log("Invalid day");
+}
+</pre>
+
+<hr>
+
+<h2>Difference Between if–else and switch</h2>
+<table border="1" cellpadding="8">
+  <tr>
+    <th>if–else</th>
+    <th>switch</th>
+  </tr>
+  <tr>
+    <td>Used for complex conditions</td>
+    <td>Used for fixed values</td>
+  </tr>
+  <tr>
+    <td>Supports logical operators</td>
+    <td>Does not support logical operators</td>
+  </tr>
+</table>
+
+<hr>
+
+<h2>Summary</h2>
+<ul>
+  <li>Control statements control program execution</li>
+  <li>if–else is used for decision making</li>
+  <li>switch is used for multiple fixed conditions</li>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 4 – JavaScript Data Types</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<h1>Chapter 4: JavaScript Data Types</h1>
+
+<h2>What are Data Types?</h2>
+<p>
+Data types specify the type of data that a variable can store.
+JavaScript is a dynamically typed language, which means the data type
+of a variable is decided at runtime.
+</p>
+
+<hr>
+
+<h2>Classification of Data Types</h2>
+<ul>
+  <li><strong>Primitive Data Types</strong></li>
+  <li><strong>Non-Primitive (Reference) Data Types</strong></li>
+</ul>
+
+<hr>
+
+<h2>1. Primitive Data Types</h2>
+<p>
+Primitive data types store single values and are immutable.
+</p>
+
+<h3>a) Number</h3>
+<p>
+The <strong>Number</strong> data type is used to store numeric values
+(both integers and decimals).
+</p>
+<pre>
+let a = 10;
+let b = 3.5;
+console.log(a, b);
+</pre>
+
+<h3>b) String</h3>
+<p>
+The <strong>String</strong> data type is used to store text.
+Strings are written inside single or double quotes.
+</p>
+<pre>
+let name = "JavaScript";
+let msg = 'Hello World';
+console.log(name, msg);
+</pre>
+
+<h3>c) Boolean</h3>
+<p>
+The <strong>Boolean</strong> data type has only two values:
+<code>true</code> or <code>false</code>.
+</p>
+<pre>
+let isLoggedIn = true;
+let isAdmin = false;
+console.log(isLoggedIn, isAdmin);
+</pre>
+
+<h3>d) Undefined</h3>
+<p>
+A variable declared but not assigned any value has the
+<code>undefined</code> data type.
+</p>
+<pre>
+let x;
+console.log(x);   // Output: undefined
+</pre>
+
+<h3>e) Null</h3>
+<p>
+The <strong>null</strong> data type represents an intentional
+absence of value.
+</p>
+<pre>
+let data = null;
+console.log(data);
+</pre>
+
+<hr>
+
+<h2>2. Non-Primitive (Reference) Data Types</h2>
+<p>
+Non-primitive data types can store multiple values and are mutable.
+</p>
+
+<h3>a) Object</h3>
+<p>
+Objects store data in key-value pairs.
+</p>
+<pre>
+let student = {
+  name: "Amit",
+  age: 20,
+  course: "MERN"
+};
+console.log(student);
+</pre>
+
+<h3>b) Array</h3>
+<p>
+Arrays store multiple values in a single variable.
+</p>
+<pre>
+let subjects = ["HTML", "CSS", "JavaScript"];
+console.log(subjects);
+</pre>
+
+<h3>c) Function</h3>
+<p>
+Functions are reusable blocks of code that perform a specific task.
+</p>
+<pre>
+function greet() {
+  console.log("Welcome to MERN Stack");
+}
+greet();
+</pre>
+
+<hr>
+
+<h2>Difference Between Primitive and Non-Primitive</h2>
+<table border="1" cellpadding="8">
+  <tr>
+    <th>Primitive</th>
+    <th>Non-Primitive</th>
+  </tr>
+  <tr>
+    <td>Stores single value</td>
+    <td>Stores multiple values</td>
+  </tr>
+  <tr>
+    <td>Immutable</td>
+    <td>Mutable</td>
+  </tr>
+  <tr>
+    <td>Example: Number, String</td>
+    <td>Example: Object, Array</td>
+  </tr>
+</table>
+
+<hr>
+
+<h2>Summary</h2>
+<ul>
+  <li>JavaScript supports primitive and non-primitive data types</li>
+  <li>Primitive data types store simple values</li>
+  <li>Non-primitive data types store complex data</li>
+</ul>
+
+</body>
+</html>

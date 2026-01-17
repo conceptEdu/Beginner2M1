@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 28 – React Routing (React Router DOM)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<h1>Chapter 28: React Routing (React Router DOM)</h1>
+
+<h2>What is Routing?</h2>
+<p>
+Routing is the process of navigating between different pages
+or components in a web application. In React, routing allows
+us to build Single Page Applications (SPA).
+</p>
+
+<hr>
+
+<h2>What is React Router?</h2>
+<p>
+React Router is a standard library used for handling routing
+in React applications. It enables navigation without page reload.
+</p>
+
+<hr>
+
+<h2>Installing React Router DOM</h2>
+<pre>
+npm install react-router-dom
+</pre>
+
+<hr>
+
+<h2>BrowserRouter</h2>
+<p>
+BrowserRouter is used to wrap the entire application
+and enables routing functionality.
+</p>
+
+<pre>
+import { BrowserRouter } from "react-router-dom";
+
+function App() {
+  return (
+    <BrowserRouter>
+      {/* Routes go here */}
+    </BrowserRouter>
+  );
+}
+</pre>
+
+<hr>
+
+<h2>Routes and Route</h2>
+<p>
+Routes define different paths and the components
+that should render for those paths.
+</p>
+
+<pre>
+import { Routes, Route } from "react-router-dom";
+import Home from "./Home";
+import About from "./About";
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+    </Routes>
+  );
+}
+</pre>
+
+<hr>
+
+<h2>Link Component</h2>
+<p>
+The <code>Link</code> component is used to navigate
+between routes without refreshing the page.
+</p>
+
+<pre>
+import { Link } from "react-router-dom";
+
+<Link to="/">Home</Link>
+<Link to="/about">About</Link>
+</pre>
+
+<hr>
+
+<h2>NavLink</h2>
+<p>
+NavLink is similar to Link but allows styling
+the active route.
+</p>
+
+<pre>
+<NavLink to="/about">About</NavLink>
+</pre>
+
+<hr>
+
+<h2>Dynamic Routing & useParams</h2>
+<p>
+Dynamic routing is used when route values change dynamically,
+such as user IDs.
+</p>
+
+<pre>
+<Route path="/user/:id" element={<User />} />
+</pre>
+
+<h3>Using useParams</h3>
+<pre>
+import { useParams } from "react-router-dom";
+
+function User() {
+  const { id } = useParams();
+  return <h2>User ID: {id}</h2>;
+}
+</pre>
+
+<hr>
+
+<h2>useNavigate Hook</h2>
+<p>
+useNavigate is used to navigate programmatically.
+</p>
+
+<pre>
+import { useNavigate } from "react-router-dom";
+
+function Login() {
+  const navigate = useNavigate();
+
+  function handleLogin() {
+    navigate("/dashboard");
+  }
+
+  return <button onClick={handleLogin}>Login</button>;
+}
+</pre>
+
+<hr>
+
+<h2>404 Page (Not Found Route)</h2>
+<pre>
+<Route path="*" element={<NotFound />} />
+</pre>
+
+<hr>
+
+<h2>Summary</h2>
+<ul>
+  <li>React Router enables SPA navigation</li>
+  <li>BrowserRouter wraps the app</li>
+  <li>Routes and Route define paths</li>
+  <li>Link and useNavigate handle navigation</li>
+</ul>
+
+</body>
+</html>

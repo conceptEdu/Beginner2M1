@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 24 – Authentication & Authorization (JWT)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<h1>Chapter 24: Authentication & Authorization (JWT)</h1>
+
+<h2>What is Authentication?</h2>
+<p>
+Authentication is the process of verifying the identity of a user.
+It answers the question: <strong>Who are you?</strong>
+</p>
+
+<hr>
+
+<h2>What is Authorization?</h2>
+<p>
+Authorization determines what an authenticated user is allowed to do.
+It answers the question: <strong>What can you access?</strong>
+</p>
+
+<hr>
+
+<h2>Authentication vs Authorization</h2>
+<table border="1" cellpadding="8">
+  <tr>
+    <th>Authentication</th>
+    <th>Authorization</th>
+  </tr>
+  <tr>
+    <td>User identity verification</td>
+    <td>Permission checking</td>
+  </tr>
+  <tr>
+    <td>Login process</td>
+    <td>Access control</td>
+  </tr>
+</table>
+
+<hr>
+
+<h2>What is JWT?</h2>
+<p>
+JWT (JSON Web Token) is a compact and secure way to transmit
+information between client and server as a JSON object.
+It is commonly used for authentication in MERN applications.
+</p>
+
+<hr>
+
+<h2>Structure of JWT</h2>
+<ul>
+  <li><strong>Header</strong> – Token type and algorithm</li>
+  <li><strong>Payload</strong> – User data</li>
+  <li><strong>Signature</strong> – Verification signature</li>
+</ul>
+
+<hr>
+
+<h2>JWT Authentication Flow</h2>
+<ol>
+  <li>User sends login credentials</li>
+  <li>Server verifies credentials</li>
+  <li>JWT token is generated</li>
+  <li>Token is sent to client</li>
+  <li>Client sends token with each request</li>
+</ol>
+
+<hr>
+
+<h2>Installing Required Packages</h2>
+<pre>
+npm install jsonwebtoken bcryptjs
+</pre>
+
+<hr>
+
+<h2>Password Hashing Using bcrypt</h2>
+<pre>
+const bcrypt = require("bcryptjs");
+
+const hashedPassword = bcrypt.hashSync("password123", 10);
+</pre>
+
+<h3>Comparing Password</h3>
+<pre>
+bcrypt.compare("password123", hashedPassword);
+</pre>
+
+<hr>
+
+<h2>Generating JWT Token</h2>
+<pre>
+const jwt = require("jsonwebtoken");
+
+const token = jwt.sign(
+  { userId: user._id },
+  "secretKey",
+  { expiresIn: "1h" }
+);
+</pre>
+
+<hr>
+
+<h2>Login API Example</h2>
+<pre>
+app.post("/login", async (req, res) => {
+  const { email, password } = req.body;
+
+  // validate user
+  // compare password
+
+  const token = jwt.sign(
+    { email: email },
+    "secretKey",
+    { expiresIn: "1h" }
+  );
+
+  res.json({ token });
+});
+</pre>
+
+<hr>
+
+<h2>Authorization Middleware</h2>
+<pre>
+function verifyToken(req, res, next) {
+  const token = req.headers["authorization"];
+
+  if (!token) {
+    return res.status(403).send("Token required");
+  }
+
+  jwt.verify(token, "secretKey", (err, decoded) => {
+    if (err) {
+      return res.status(401).send("Invalid token");
+    }
+    req.user = decoded;
+    next();
+  });
+}
+</pre>
+
+<hr>
+
+<h2>Protecting Routes</h2>
+<pre>
+app.get("/dashboard", verifyToken, (req, res) => {
+  res.send("Welcome to Dashboard");
+});
+</pre>
+
+<hr>
+
+<h2>Summary</h2>
+<ul>
+  <li>Authentication verifies user identity</li>
+  <li>Authorization controls access</li>
+  <li>JWT is used for secure authentication</li>
+  <li>Middleware protects private routes</li>
+</ul>
+
+</body>
+</html>

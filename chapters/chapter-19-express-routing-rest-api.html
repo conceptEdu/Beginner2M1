@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 19 – Express Routing & REST API Basics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<h1>Chapter 19: Express Routing & REST API Basics</h1>
+
+<h2>What is Routing?</h2>
+<p>
+Routing refers to defining how an application responds to
+client requests for specific URLs (routes) and HTTP methods.
+Express provides a simple and powerful routing mechanism.
+</p>
+
+<hr>
+
+<h2>Basic Route Example</h2>
+<pre>
+const express = require("express");
+const app = express();
+
+app.get("/", (req, res) => {
+  res.send("Home Page");
+});
+
+app.listen(3000);
+</pre>
+
+<hr>
+
+<h2>HTTP Methods in Express</h2>
+<ul>
+  <li><strong>GET</strong> – Retrieve data</li>
+  <li><strong>POST</strong> – Send data to server</li>
+  <li><strong>PUT</strong> – Update existing data</li>
+  <li><strong>DELETE</strong> – Remove data</li>
+</ul>
+
+<hr>
+
+<h2>GET Method</h2>
+<pre>
+app.get("/users", (req, res) => {
+  res.send("List of users");
+});
+</pre>
+
+<hr>
+
+<h2>POST Method</h2>
+<pre>
+app.post("/users", (req, res) => {
+  res.send("User created");
+});
+</pre>
+
+<hr>
+
+<h2>PUT Method</h2>
+<pre>
+app.put("/users/:id", (req, res) => {
+  res.send("User updated");
+});
+</pre>
+
+<hr>
+
+<h2>DELETE Method</h2>
+<pre>
+app.delete("/users/:id", (req, res) => {
+  res.send("User deleted");
+});
+</pre>
+
+<hr>
+
+<h2>Route Parameters</h2>
+<p>
+Route parameters are used to capture values from the URL.
+</p>
+
+<pre>
+app.get("/product/:id", (req, res) => {
+  res.send(req.params.id);
+});
+</pre>
+
+<hr>
+
+<h2>What is REST API?</h2>
+<p>
+REST (Representational State Transfer) is an architectural style
+used to build web services. A REST API allows communication
+between client and server using HTTP methods.
+</p>
+
+<hr>
+
+<h2>REST API Characteristics</h2>
+<ul>
+  <li>Client–Server architecture</li>
+  <li>Stateless communication</li>
+  <li>Uses HTTP methods</li>
+  <li>Returns JSON data</li>
+</ul>
+
+<hr>
+
+<h2>Simple REST API Example</h2>
+<pre>
+app.get("/api/students", (req, res) => {
+  res.json([
+    { id: 1, name: "Amit" },
+    { id: 2, name: "Neha" }
+  ]);
+});
+</pre>
+
+<hr>
+
+<h2>Difference Between Traditional Routing and REST API</h2>
+<table border="1" cellpadding="8">
+  <tr>
+    <th>Traditional Routing</th>
+    <th>REST API</th>
+  </tr>
+  <tr>
+    <td>Returns HTML</td>
+    <td>Returns JSON</td>
+  </tr>
+  <tr>
+    <td>Used for webpages</td>
+    <td>Used for client-server communication</td>
+  </tr>
+</table>
+
+<hr>
+
+<h2>Summary</h2>
+<ul>
+  <li>Routing defines application endpoints</li>
+  <li>REST API uses HTTP methods</li>
+  <li>Express simplifies API development</li>
+</ul>
+
+</body>
+</html>

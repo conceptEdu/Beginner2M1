@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 25 – React.js Introduction & Setup</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<h1>Chapter 25: React.js Introduction & Setup</h1>
+
+<h2>What is React.js?</h2>
+<p>
+React.js is a JavaScript library developed by Facebook
+for building fast and interactive user interfaces.
+It is component-based and widely used for single-page applications (SPA).
+</p>
+
+<hr>
+
+<h2>Why Use React?</h2>
+<ul>
+  <li>Component-based architecture</li>
+  <li>Fast rendering using Virtual DOM</li>
+  <li>Reusable UI components</li>
+  <li>Strong community support</li>
+</ul>
+
+<hr>
+
+<h2>Features of React.js</h2>
+<ul>
+  <li>Declarative UI</li>
+  <li>Component-based structure</li>
+  <li>Virtual DOM</li>
+  <li>One-way data binding</li>
+</ul>
+
+<hr>
+
+<h2>What is Virtual DOM?</h2>
+<p>
+Virtual DOM is a lightweight copy of the real DOM.
+React updates the Virtual DOM first and then efficiently
+updates only the changed parts in the real DOM.
+</p>
+
+<hr>
+
+<h2>What are Components?</h2>
+<p>
+Components are independent and reusable pieces of UI.
+Each component returns JSX which describes what should appear on the screen.
+</p>
+
+<h3>Types of Components</h3>
+<ul>
+  <li>Functional Components</li>
+  <li>Class Components</li>
+</ul>
+
+<hr>
+
+<h2>JSX (JavaScript XML)</h2>
+<p>
+JSX allows writing HTML inside JavaScript.
+It makes code easier to read and write.
+</p>
+
+<h3>Example:</h3>
+<pre>
+const element = <h1>Hello React</h1>;
+</pre>
+
+<hr>
+
+<h2>Setting Up React Environment</h2>
+
+<h3>Using Create React App</h3>
+<pre>
+npx create-react-app myApp
+cd myApp
+npm start
+</pre>
+
+<p>
+This command creates a new React project with all required configurations.
+</p>
+
+<hr>
+
+<h2>Project Folder Structure</h2>
+<ul>
+  <li><strong>src/</strong> – Application source code</li>
+  <li><strong>public/</strong> – Static files</li>
+  <li><strong>package.json</strong> – Project dependencies</li>
+</ul>
+
+<hr>
+
+<h2>Your First React Component</h2>
+<pre>
+// App.js
+function App() {
+  return <h1>Welcome to React</h1>;
+}
+
+export default App;
+</pre>
+
+<hr>
+
+<h2>Rendering Component</h2>
+<pre>
+// index.js
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+
+const root = ReactDOM.createRoot(
+  document.getElementById("root")
+);
+root.render(<App />);
+</pre>
+
+<hr>
+
+<h2>Summary</h2>
+<ul>
+  <li>React is a JavaScript UI library</li>
+  <li>Uses components and JSX</li>
+  <li>Virtual DOM improves performance</li>
+  <li>Create React App simplifies setup</li>
+</ul>
+
+</body>
+</html>

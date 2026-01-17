@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 3 – JavaScript Variables</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<h1>Chapter 3: JavaScript Variables</h1>
+
+<h2>What are Variables?</h2>
+<p>
+In JavaScript, variables are used to store data values.
+JavaScript is a dynamically typed language, which means
+data types are determined at runtime.
+</p>
+
+<p>
+To declare a variable in JavaScript, we use the keywords
+<strong>var</strong>, <strong>let</strong>, and <strong>const</strong>.
+</p>
+
+<hr>
+
+<h2>1. var Keyword</h2>
+<p>
+The <strong>var</strong> keyword is the older way of declaring variables in JavaScript.
+It is function-scoped and accessible throughout the function
+where it is declared.
+</p>
+
+<h3>Example:</h3>
+<pre>
+var age = 20;
+console.log(age);   // Output: 20
+
+age = 22;
+console.log(age);   // Output: 22
+</pre>
+
+<p>
+A variable declared with <code>var</code> can be reassigned
+and redeclared within the same scope.
+</p>
+
+<hr>
+
+<h2>2. let Keyword</h2>
+<p>
+The <strong>let</strong> keyword was introduced to overcome issues
+associated with <code>var</code>. It is block-scoped,
+meaning it is accessible only within the block where it is declared.
+</p>
+
+<h3>Example:</h3>
+<pre>
+let name = "Abhishek";
+console.log(name);   // Output: Abhishek
+
+name = "Rahul";
+console.log(name);   // Output: Rahul
+</pre>
+
+<h3>Block Scope Example:</h3>
+<pre>
+if (true) {
+  let x = 20;
+  console.log(x);   // Output: 20
+}
+</pre>
+
+<p>
+The variable <code>x</code> cannot be accessed outside the block.
+</p>
+
+<hr>
+
+<h2>3. const Keyword</h2>
+<p>
+The <strong>const</strong> keyword is used to declare constant variables.
+Once a value is assigned, it cannot be reassigned.
+It is also block-scoped like <code>let</code>.
+</p>
+
+<h3>Example:</h3>
+<pre>
+const PI = 3.14;
+console.log(PI);   // Output: 3.14
+</pre>
+
+<p>
+Reassigning a <code>const</code> variable is not allowed and
+will result in an error.
+</p>
+
+<hr>
+
+<h2>Reassignment of Variables</h2>
+<p>
+In JavaScript, a variable can be reassigned by using
+the assignment operator (<code>=</code>).
+</p>
+
+<pre>
+let value = 10;
+value = 25;
+console.log(value);   // Output: 25
+</pre>
+
+<p>
+When reassigning a variable, the keyword is not used again.
+</p>
+
+<hr>
+
+<h2>Summary</h2>
+<ul>
+  <li><strong>var</strong> – function scoped, can be redeclared</li>
+  <li><strong>let</strong> – block scoped, preferred for variables</li>
+  <li><strong>const</strong> – block scoped, value cannot be changed</li>
+</ul>
+
+</body>
+</html>

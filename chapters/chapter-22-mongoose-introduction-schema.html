@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 22 – Mongoose Introduction & Schema</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<h1>Chapter 22: Mongoose Introduction & Schema</h1>
+
+<h2>What is Mongoose?</h2>
+<p>
+Mongoose is an Object Data Modeling (ODM) library for MongoDB and Node.js.
+It provides a structured way to interact with MongoDB by using schemas
+and models.
+</p>
+
+<hr>
+
+<h2>Why Use Mongoose?</h2>
+<ul>
+  <li>Simplifies MongoDB operations</li>
+  <li>Provides schema-based structure</li>
+  <li>Built-in validation</li>
+  <li>Easy integration with Express</li>
+</ul>
+
+<hr>
+
+<h2>Installing Mongoose</h2>
+<pre>
+npm install mongoose
+</pre>
+
+<hr>
+
+<h2>Connecting Node.js with MongoDB</h2>
+<pre>
+const mongoose = require("mongoose");
+
+mongoose.connect("mongodb://localhost:27017/mernDB")
+  .then(() => console.log("MongoDB Connected"))
+  .catch(err => console.log(err));
+</pre>
+
+<hr>
+
+<h2>What is a Schema?</h2>
+<p>
+A schema defines the structure of documents inside a MongoDB collection.
+It specifies field names, data types, and validation rules.
+</p>
+
+<hr>
+
+<h2>Creating a Schema</h2>
+<pre>
+const mongoose = require("mongoose");
+
+const studentSchema = new mongoose.Schema({
+  name: String,
+  age: Number,
+  course: String
+});
+</pre>
+
+<hr>
+
+<h2>What is a Model?</h2>
+<p>
+A model is a JavaScript class created from a schema.
+It represents a collection in MongoDB and is used
+to perform CRUD operations.
+</p>
+
+<hr>
+
+<h2>Creating a Model</h2>
+<pre>
+const Student = mongoose.model("Student", studentSchema);
+</pre>
+
+<hr>
+
+<h2>Inserting Data Using Model</h2>
+<pre>
+const student1 = new Student({
+  name: "Amit",
+  age: 21,
+  course: "MERN"
+});
+
+student1.save()
+  .then(() => console.log("Student saved"))
+  .catch(err => console.log(err));
+</pre>
+
+<hr>
+
+<h2>Schema with Validation</h2>
+<pre>
+const userSchema = new mongoose.Schema({
+  username: {
+    type: String,
+    required: true
+  },
+  email: {
+    type: String,
+    unique: true
+  },
+  age: {
+    type: Number,
+    min: 18
+  }
+});
+</pre>
+
+<hr>
+
+<h2>Benefits of Mongoose</h2>
+<ul>
+  <li>Cleaner and structured code</li>
+  <li>Data validation</li>
+  <li>Easy relationship handling</li>
+</ul>
+
+<hr>
+
+<h2>Summary</h2>
+<ul>
+  <li>Mongoose connects Node.js with MongoDB</li>
+  <li>Schemas define data structure</li>
+  <li>Models perform database operations</li>
+</ul>
+
+</body>
+</html>

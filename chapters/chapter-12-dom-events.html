@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 12 – DOM Events & Event Handling</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<h1>Chapter 12: DOM Events & Event Handling</h1>
+
+<h2>What are Events?</h2>
+<p>
+Events are actions or occurrences that happen in the browser
+when a user interacts with a webpage. JavaScript can respond
+to these events using event handlers.
+</p>
+
+<hr>
+
+<h2>Common DOM Events</h2>
+<ul>
+  <li>click</li>
+  <li>dblclick</li>
+  <li>mouseover</li>
+  <li>mouseout</li>
+  <li>keydown</li>
+  <li>keyup</li>
+  <li>change</li>
+  <li>submit</li>
+  <li>load</li>
+</ul>
+
+<hr>
+
+<h2>Event Handling Methods</h2>
+
+<h3>1. Inline Event Handling</h3>
+<p>
+Event is handled directly inside the HTML element.
+</p>
+
+<pre>
+&lt;button onclick="showMessage()"&gt;Click Me&lt;/button&gt;
+
+&lt;script&gt;
+function showMessage() {
+  alert("Button clicked!");
+}
+&lt;/script&gt;
+</pre>
+
+<hr>
+
+<h3>2. Event Handler Property</h3>
+<p>
+Events are handled by assigning a function to an element property.
+</p>
+
+<pre>
+&lt;button id="btn"&gt;Click&lt;/button&gt;
+
+&lt;script&gt;
+document.getElementById("btn").onclick = function() {
+  alert("Button clicked");
+};
+&lt;/script&gt;
+</pre>
+
+<hr>
+
+<h3>3. addEventListener() Method</h3>
+<p>
+This is the most recommended and modern way to handle events.
+It allows multiple events on a single element.
+</p>
+
+<h3>Syntax:</h3>
+<pre>
+element.addEventListener("event", function);
+</pre>
+
+<h3>Example:</h3>
+<pre>
+&lt;button id="myBtn"&gt;Click Me&lt;/button&gt;
+
+&lt;script&gt;
+document.getElementById("myBtn")
+  .addEventListener("click", function() {
+    alert("Event triggered!");
+  });
+&lt;/script&gt;
+</pre>
+
+<hr>
+
+<h2>Event Object</h2>
+<p>
+When an event occurs, JavaScript automatically creates an
+<strong>event object</strong> that contains information
+about the event.
+</p>
+
+<pre>
+document.addEventListener("click", function(event) {
+  console.log(event.type);
+  console.log(event.target);
+});
+</pre>
+
+<hr>
+
+<h2>Form Events</h2>
+
+<h3>submit Event</h3>
+<pre>
+&lt;form id="myForm"&gt;
+  &lt;input type="text"&gt;
+  &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;script&gt;
+document.getElementById("myForm")
+  .addEventListener("submit", function(e) {
+    e.preventDefault();
+    alert("Form submitted");
+  });
+&lt;/script&gt;
+</pre>
+
+<hr>
+
+<h2>Difference Between onclick and addEventListener</h2>
+<table border="1" cellpadding="8">
+  <tr>
+    <th>onclick</th>
+    <th>addEventListener</th>
+  </tr>
+  <tr>
+    <td>Only one event at a time</td>
+    <td>Multiple events allowed</td>
+  </tr>
+  <tr>
+    <td>Old method</td>
+    <td>Modern method</td>
+  </tr>
+</table>
+
+<hr>
+
+<h2>Summary</h2>
+<ul>
+  <li>Events represent user interactions</li>
+  <li>JavaScript can handle events dynamically</li>
+  <li>addEventListener is the best practice</li>
+</ul>
+
+</body>
+</html>

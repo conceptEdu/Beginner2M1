@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 23 – Mongoose CRUD Operations</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<h1>Chapter 23: Mongoose CRUD Operations</h1>
+
+<h2>What is CRUD in Mongoose?</h2>
+<p>
+CRUD stands for <strong>Create, Read, Update, Delete</strong>.
+Using Mongoose models, we can easily perform these operations
+on MongoDB collections.
+</p>
+
+<hr>
+
+<h2>Prerequisite: Model Example</h2>
+<pre>
+const mongoose = require("mongoose");
+
+const studentSchema = new mongoose.Schema({
+  name: String,
+  age: Number,
+  course: String
+});
+
+const Student = mongoose.model("Student", studentSchema);
+</pre>
+
+<hr>
+
+<h2>1. Create (Insert Data)</h2>
+
+<h3>Create One Document</h3>
+<pre>
+const student = new Student({
+  name: "Amit",
+  age: 21,
+  course: "MERN"
+});
+
+student.save()
+  .then(() => console.log("Student inserted"))
+  .catch(err => console.log(err));
+</pre>
+
+<h3>Create Using create()</h3>
+<pre>
+Student.create({
+  name: "Neha",
+  age: 22,
+  course: "MERN"
+});
+</pre>
+
+<hr>
+
+<h2>2. Read (Fetch Data)</h2>
+
+<h3>Find All Documents</h3>
+<pre>
+Student.find()
+  .then(data => console.log(data));
+</pre>
+
+<h3>Find with Condition</h3>
+<pre>
+Student.find({ course: "MERN" })
+  .then(data => console.log(data));
+</pre>
+
+<h3>Find One Document</h3>
+<pre>
+Student.findOne({ name: "Amit" })
+  .then(data => console.log(data));
+</pre>
+
+<h3>Find By ID</h3>
+<pre>
+Student.findById("64af12345abc")
+  .then(data => console.log(data));
+</pre>
+
+<hr>
+
+<h2>3. Update (Modify Data)</h2>
+
+<h3>Update One Document</h3>
+<pre>
+Student.updateOne(
+  { name: "Amit" },
+  { $set: { age: 22 } }
+);
+</pre>
+
+<h3>Update Many Documents</h3>
+<pre>
+Student.updateMany(
+  { course: "MERN" },
+  { $set: { status: "active" } }
+);
+</pre>
+
+<h3>findByIdAndUpdate()</h3>
+<pre>
+Student.findByIdAndUpdate(
+  "64af12345abc",
+  { age: 23 },
+  { new: true }
+);
+</pre>
+
+<hr>
+
+<h2>4. Delete (Remove Data)</h2>
+
+<h3>Delete One Document</h3>
+<pre>
+Student.deleteOne({ name: "Neha" });
+</pre>
+
+<h3>Delete Many Documents</h3>
+<pre>
+Student.deleteMany({ course: "MEAN" });
+</pre>
+
+<h3>findByIdAndDelete()</h3>
+<pre>
+Student.findByIdAndDelete("64af12345abc");
+</pre>
+
+<hr>
+
+<h2>Query Helpers</h2>
+<ul>
+  <li><code>limit()</code> – Limit number of results</li>
+  <li><code>sort()</code> – Sort results</li>
+  <li><code>select()</code> – Select specific fields</li>
+</ul>
+
+<h3>Example</h3>
+<pre>
+Student.find()
+  .select("name age")
+  .sort({ age: 1 })
+  .limit(5)
+  .then(data => console.log(data));
+</pre>
+
+<hr>
+
+<h2>Summary</h2>
+<ul>
+  <li>Mongoose provides simple CRUD methods</li>
+  <li>Models are used for database operations</li>
+  <li>CRUD is essential for backend applications</li>
+</ul>
+
+</body>
+</html>

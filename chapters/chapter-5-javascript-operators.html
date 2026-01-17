@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 5 – JavaScript Operators</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<h1>Chapter 5: JavaScript Operators</h1>
+
+<h2>What are Operators?</h2>
+<p>
+Operators are symbols used to perform operations on variables and values.
+JavaScript provides different types of operators to perform calculations,
+comparisons, and logical decisions.
+</p>
+
+<hr>
+
+<h2>Types of JavaScript Operators</h2>
+<ul>
+  <li>Arithmetic Operators</li>
+  <li>Assignment Operators</li>
+  <li>Comparison Operators</li>
+  <li>Logical Operators</li>
+</ul>
+
+<hr>
+
+<h2>1. Arithmetic Operators</h2>
+<p>
+Arithmetic operators are used to perform mathematical calculations.
+</p>
+
+<table border="1" cellpadding="8">
+  <tr>
+    <th>Operator</th>
+    <th>Description</th>
+    <th>Example</th>
+  </tr>
+  <tr>
+    <td>+</td>
+    <td>Addition</td>
+    <td>a + b</td>
+  </tr>
+  <tr>
+    <td>-</td>
+    <td>Subtraction</td>
+    <td>a - b</td>
+  </tr>
+  <tr>
+    <td>*</td>
+    <td>Multiplication</td>
+    <td>a * b</td>
+  </tr>
+  <tr>
+    <td>/</td>
+    <td>Division</td>
+    <td>a / b</td>
+  </tr>
+  <tr>
+    <td>%</td>
+    <td>Modulus</td>
+    <td>a % b</td>
+  </tr>
+</table>
+
+<h3>Example:</h3>
+<pre>
+let a = 10;
+let b = 3;
+
+console.log(a + b); // 13
+console.log(a - b); // 7
+console.log(a * b); // 30
+console.log(a / b); // 3.33
+console.log(a % b); // 1
+</pre>
+
+<hr>
+
+<h2>2. Assignment Operators</h2>
+<p>
+Assignment operators are used to assign values to variables.
+</p>
+
+<table border="1" cellpadding="8">
+  <tr>
+    <th>Operator</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>=</td>
+    <td>Assign value</td>
+  </tr>
+  <tr>
+    <td>+=</td>
+    <td>Add and assign</td>
+  </tr>
+  <tr>
+    <td>-=</td>
+    <td>Subtract and assign</td>
+  </tr>
+  <tr>
+    <td>*=</td>
+    <td>Multiply and assign</td>
+  </tr>
+  <tr>
+    <td>/=</td>
+    <td>Divide and assign</td>
+  </tr>
+</table>
+
+<h3>Example:</h3>
+<pre>
+let x = 10;
+x += 5;   // x = 15
+x -= 3;   // x = 12
+console.log(x);
+</pre>
+
+<hr>
+
+<h2>3. Comparison Operators</h2>
+<p>
+Comparison operators are used to compare two values and return
+a boolean result (<code>true</code> or <code>false</code>).
+</p>
+
+<table border="1" cellpadding="8">
+  <tr>
+    <th>Operator</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>==</td>
+    <td>Equal to (value only)</td>
+  </tr>
+  <tr>
+    <td>===</td>
+    <td>Strict equal (value & type)</td>
+  </tr>
+  <tr>
+    <td>!=</td>
+    <td>Not equal</td>
+  </tr>
+  <tr>
+    <td>></td>
+    <td>Greater than</td>
+  </tr>
+  <tr>
+    <td><</td>
+    <td>Less than</td>
+  </tr>
+</table>
+
+<h3>Example:</h3>
+<pre>
+let a = 10;
+let b = "10";
+
+console.log(a == b);   // true
+console.log(a === b);  // false
+console.log(a != b);   // false
+console.log(a > 5);    // true
+</pre>
+
+<hr>
+
+<h2>4. Logical Operators</h2>
+<p>
+Logical operators are used to combine multiple conditions.
+</p>
+
+<table border="1" cellpadding="8">
+  <tr>
+    <th>Operator</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>&&</td>
+    <td>Logical AND</td>
+  </tr>
+  <tr>
+    <td>||</td>
+    <td>Logical OR</td>
+  </tr>
+  <tr>
+    <td>!</td>
+    <td>Logical NOT</td>
+  </tr>
+</table>
+
+<h3>Example:</h3>
+<pre>
+let age = 20;
+let hasID = true;
+
+console.log(age > 18 && hasID); // true
+console.log(age < 18 || hasID); // true
+console.log(!hasID);            // false
+</pre>
+
+<hr>
+
+<h2>Summary</h2>
+<ul>
+  <li>Operators perform operations on variables and values</li>
+  <li>Arithmetic operators handle calculations</li>
+  <li>Comparison operators return boolean values</li>
+  <li>Logical operators combine conditions</li>
+</ul>
+
+</body>
+</html>

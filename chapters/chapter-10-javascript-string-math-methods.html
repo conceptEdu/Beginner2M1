@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 10 – JavaScript String & Math Methods</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<h1>Chapter 10: JavaScript String & Math Methods</h1>
+
+<h2>String in JavaScript</h2>
+<p>
+A string is a sequence of characters used to store text.
+Strings can be written using single quotes, double quotes,
+or backticks.
+</p>
+
+<h3>Example:</h3>
+<pre>
+let str1 = "JavaScript";
+let str2 = 'MERN Stack';
+console.log(str1, str2);
+</pre>
+
+<hr>
+
+<h2>Common String Methods</h2>
+
+<h3>1. length</h3>
+<p>Returns the length of the string.</p>
+<pre>
+let text = "Hello";
+console.log(text.length); // 5
+</pre>
+
+<h3>2. toUpperCase()</h3>
+<p>Converts string to uppercase.</p>
+<pre>
+console.log(text.toUpperCase()); // HELLO
+</pre>
+
+<h3>3. toLowerCase()</h3>
+<p>Converts string to lowercase.</p>
+<pre>
+console.log(text.toLowerCase()); // hello
+</pre>
+
+<h3>4. indexOf()</h3>
+<p>Returns the position of a specified value.</p>
+<pre>
+console.log(text.indexOf("e")); // 1
+</pre>
+
+<h3>5. slice()</h3>
+<p>Extracts a part of a string.</p>
+<pre>
+let word = "JavaScript";
+console.log(word.slice(0, 4)); // Java
+</pre>
+
+<h3>6. replace()</h3>
+<p>Replaces specified text with new text.</p>
+<pre>
+let msg = "I love Java";
+console.log(msg.replace("Java", "JavaScript"));
+</pre>
+
+<hr>
+
+<h2>Math Object in JavaScript</h2>
+<p>
+The <strong>Math</strong> object provides mathematical constants
+and functions.
+</p>
+
+<h3>Common Math Methods</h3>
+
+<h3>1. Math.round()</h3>
+<p>Rounds a number to the nearest integer.</p>
+<pre>
+console.log(Math.round(4.6)); // 5
+</pre>
+
+<h3>2. Math.floor()</h3>
+<p>Returns the largest integer less than or equal to a number.</p>
+<pre>
+console.log(Math.floor(4.9)); // 4
+</pre>
+
+<h3>3. Math.ceil()</h3>
+<p>Returns the smallest integer greater than or equal to a number.</p>
+<pre>
+console.log(Math.ceil(4.1)); // 5
+</pre>
+
+<h3>4. Math.random()</h3>
+<p>Returns a random number between 0 and 1.</p>
+<pre>
+console.log(Math.random());
+</pre>
+
+<h3>5. Math.max() and Math.min()</h3>
+<p>Returns the maximum and minimum value.</p>
+<pre>
+console.log(Math.max(10, 5, 20)); // 20
+console.log(Math.min(10, 5, 20)); // 5
+</pre>
+
+<hr>
+
+<h2>Summary</h2>
+<ul>
+  <li>Strings are used to store text data</li>
+  <li>String methods help manipulate text</li>
+  <li>Math object provides useful mathematical operations</li>
+</ul>
+
+</body>
+</html>

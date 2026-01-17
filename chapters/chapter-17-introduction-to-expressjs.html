@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 17 – Introduction to Express.js</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<h1>Chapter 17: Introduction to Express.js</h1>
+
+<h2>What is Express.js?</h2>
+<p>
+Express.js is a fast, lightweight, and flexible web application
+framework built on top of Node.js. It simplifies the process
+of building web servers and APIs.
+</p>
+
+<hr>
+
+<h2>Why Use Express.js?</h2>
+<ul>
+  <li>Reduces Node.js code complexity</li>
+  <li>Easy routing system</li>
+  <li>Middleware support</li>
+  <li>Fast development of APIs</li>
+</ul>
+
+<hr>
+
+<h2>Features of Express.js</h2>
+<ul>
+  <li>Minimal and flexible framework</li>
+  <li>Powerful routing</li>
+  <li>Middleware support</li>
+  <li>Supports REST APIs</li>
+</ul>
+
+<hr>
+
+<h2>Installing Express.js</h2>
+<pre>
+npm install express
+</pre>
+
+<hr>
+
+<h2>Creating First Express Application</h2>
+
+<h3>app.js</h3>
+<pre>
+const express = require("express");
+const app = express();
+
+app.get("/", (req, res) => {
+  res.send("Welcome to Express.js");
+});
+
+app.listen(3000, () => {
+  console.log("Server running on port 3000");
+});
+</pre>
+
+<p>
+Run the application using:
+</p>
+<pre>
+node app.js
+</pre>
+
+<hr>
+
+<h2>Routing in Express.js</h2>
+<p>
+Routing refers to how an application responds to client requests
+to a particular endpoint and HTTP method.
+</p>
+
+<h3>Example Routes</h3>
+<pre>
+app.get("/about", (req, res) => {
+  res.send("About Page");
+});
+
+app.post("/login", (req, res) => {
+  res.send("Login Successful");
+});
+</pre>
+
+<hr>
+
+<h2>HTTP Methods in Express</h2>
+<ul>
+  <li>GET – Fetch data</li>
+  <li>POST – Send data</li>
+  <li>PUT – Update data</li>
+  <li>DELETE – Delete data</li>
+</ul>
+
+<hr>
+
+<h2>Response Methods</h2>
+<ul>
+  <li><code>res.send()</code></li>
+  <li><code>res.json()</code></li>
+  <li><code>res.status()</code></li>
+</ul>
+
+<hr>
+
+<h2>Advantages of Express.js</h2>
+<ul>
+  <li>Fast API development</li>
+  <li>Easy integration with MongoDB</li>
+  <li>Industry standard backend framework</li>
+</ul>
+
+<hr>
+
+<h2>Summary</h2>
+<ul>
+  <li>Express.js is built on Node.js</li>
+  <li>It simplifies server creation</li>
+  <li>Used for building RESTful APIs</li>
+</ul>
+
+</body>
+</html>

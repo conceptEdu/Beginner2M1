@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 9 – JavaScript Arrays & Objects</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<h1>Chapter 9: JavaScript Arrays & Objects</h1>
+
+<h2>Arrays in JavaScript</h2>
+<p>
+An array is a special variable that can store multiple values
+in a single variable. Arrays are ordered and index-based.
+</p>
+
+<h3>Creating an Array</h3>
+<pre>
+let subjects = ["HTML", "CSS", "JavaScript"];
+console.log(subjects);
+</pre>
+
+<h3>Accessing Array Elements</h3>
+<pre>
+console.log(subjects[0]); // HTML
+console.log(subjects[2]); // JavaScript
+</pre>
+
+<h3>Updating Array Elements</h3>
+<pre>
+subjects[1] = "Bootstrap";
+console.log(subjects);
+</pre>
+
+<hr>
+
+<h2>Common Array Methods</h2>
+
+<h3>1. push()</h3>
+<p>Adds an element at the end of an array.</p>
+<pre>
+subjects.push("React");
+</pre>
+
+<h3>2. pop()</h3>
+<p>Removes the last element from an array.</p>
+<pre>
+subjects.pop();
+</pre>
+
+<h3>3. length</h3>
+<p>Returns the number of elements in an array.</p>
+<pre>
+console.log(subjects.length);
+</pre>
+
+<h3>4. indexOf()</h3>
+<p>Returns the index of an element.</p>
+<pre>
+console.log(subjects.indexOf("JavaScript"));
+</pre>
+
+<hr>
+
+<h2>Objects in JavaScript</h2>
+<p>
+Objects store data in <strong>key : value</strong> pairs.
+They represent real-world entities.
+</p>
+
+<h3>Creating an Object</h3>
+<pre>
+let student = {
+  name: "Rahul",
+  age: 21,
+  course: "MERN Stack"
+};
+</pre>
+
+<h3>Accessing Object Properties</h3>
+<pre>
+console.log(student.name);
+console.log(student["age"]);
+</pre>
+
+<h3>Updating Object Properties</h3>
+<pre>
+student.age = 22;
+student.city = "Delhi";
+console.log(student);
+</pre>
+
+<hr>
+
+<h2>Array of Objects</h2>
+<p>
+JavaScript allows storing multiple objects inside an array.
+</p>
+
+<pre>
+let students = [
+  { name: "Amit", age: 20 },
+  { name: "Neha", age: 22 }
+];
+
+console.log(students[0].name);
+</pre>
+
+<hr>
+
+<h2>Difference Between Array and Object</h2>
+<table border="1" cellpadding="8">
+  <tr>
+    <th>Array</th>
+    <th>Object</th>
+  </tr>
+  <tr>
+    <td>Stores multiple values</td>
+    <td>Stores key-value pairs</td>
+  </tr>
+  <tr>
+    <td>Index-based access</td>
+    <td>Key-based access</td>
+  </tr>
+  <tr>
+    <td>Ordered collection</td>
+    <td>Unordered collection</td>
+  </tr>
+</table>
+
+<hr>
+
+<h2>Summary</h2>
+<ul>
+  <li>Arrays store multiple values in order</li>
+  <li>Objects store data in key-value pairs</li>
+  <li>Arrays and objects are widely used in MERN applications</li>
+</ul>
+
+</body>
+</html>

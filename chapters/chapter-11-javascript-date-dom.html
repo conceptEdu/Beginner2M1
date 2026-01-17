@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 11 – JavaScript Date & DOM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<h1>Chapter 11: JavaScript Date & DOM</h1>
+
+<h2>JavaScript Date Object</h2>
+<p>
+JavaScript provides the <strong>Date</strong> object to work with
+dates and time. It allows us to get current date, time, and
+perform date-related operations.
+</p>
+
+<h3>Creating Date Object</h3>
+<pre>
+let today = new Date();
+console.log(today);
+</pre>
+
+<hr>
+
+<h2>Common Date Methods</h2>
+
+<h3>getFullYear()</h3>
+<pre>
+let d = new Date();
+console.log(d.getFullYear());
+</pre>
+
+<h3>getMonth()</h3>
+<p>Returns month (0–11)</p>
+<pre>
+console.log(d.getMonth());
+</pre>
+
+<h3>getDate()</h3>
+<pre>
+console.log(d.getDate());
+</pre>
+
+<h3>getDay()</h3>
+<p>Returns day of week (0–6)</p>
+<pre>
+console.log(d.getDay());
+</pre>
+
+<h3>getHours(), getMinutes(), getSeconds()</h3>
+<pre>
+console.log(d.getHours());
+console.log(d.getMinutes());
+console.log(d.getSeconds());
+</pre>
+
+<hr>
+
+<h2>Setting Date Values</h2>
+<pre>
+let newDate = new Date();
+newDate.setFullYear(2026);
+newDate.setMonth(0);
+newDate.setDate(15);
+console.log(newDate);
+</pre>
+
+<hr>
+
+<h2>Introduction to DOM</h2>
+<p>
+DOM stands for <strong>Document Object Model</strong>.
+It represents the structure of an HTML document as a tree.
+JavaScript uses DOM to access and modify HTML elements dynamically.
+</p>
+
+<hr>
+
+<h2>Why DOM is Important?</h2>
+<ul>
+  <li>Change HTML content</li>
+  <li>Change CSS styles</li>
+  <li>Handle events</li>
+  <li>Create dynamic webpages</li>
+</ul>
+
+<hr>
+
+<h2>Accessing HTML Elements</h2>
+
+<h3>1. getElementById()</h3>
+<pre>
+document.getElementById("demo");
+</pre>
+
+<h3>2. getElementsByClassName()</h3>
+<pre>
+document.getElementsByClassName("box");
+</pre>
+
+<h3>3. getElementsByTagName()</h3>
+<pre>
+document.getElementsByTagName("p");
+</pre>
+
+<h3>4. querySelector()</h3>
+<pre>
+document.querySelector(".container");
+</pre>
+
+<hr>
+
+<h2>Changing HTML Content</h2>
+<pre>
+document.getElementById("demo").innerHTML = "Hello DOM";
+</pre>
+
+<hr>
+
+<h2>Summary</h2>
+<ul>
+  <li>Date object is used to handle date and time</li>
+  <li>DOM allows JavaScript to interact with HTML</li>
+  <li>DOM makes webpages dynamic and interactive</li>
+</ul>
+
+</body>
+</html>

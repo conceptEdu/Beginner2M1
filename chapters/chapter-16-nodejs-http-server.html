@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 16 – Node.js HTTP Server</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<h1>Chapter 16: Creating Server with Node.js (HTTP Module)</h1>
+
+<h2>What is a Server?</h2>
+<p>
+A server is a program that listens for client requests
+and sends responses. In Node.js, we can create a server
+using the built-in <strong>http</strong> module.
+</p>
+
+<hr>
+
+<h2>HTTP Module</h2>
+<p>
+The <code>http</code> module allows Node.js to transfer data
+using the Hyper Text Transfer Protocol (HTTP).
+It is used to create web servers.
+</p>
+
+<hr>
+
+<h2>Creating a Basic HTTP Server</h2>
+
+<h3>Example:</h3>
+<pre>
+const http = require("http");
+
+const server = http.createServer((req, res) => {
+  res.write("Hello World from Node.js Server");
+  res.end();
+});
+
+server.listen(3000, () => {
+  console.log("Server running on port 3000");
+});
+</pre>
+
+<p>
+After running this file using <code>node filename.js</code>,
+open browser and visit <strong>http://localhost:3000</strong>.
+</p>
+
+<hr>
+
+<h2>Request (req) Object</h2>
+<p>
+The <strong>req</strong> object contains information about
+the client request.
+</p>
+
+<ul>
+  <li><code>req.url</code> – request URL</li>
+  <li><code>req.method</code> – HTTP method (GET, POST)</li>
+</ul>
+
+<h3>Example:</h3>
+<pre>
+console.log(req.url);
+console.log(req.method);
+</pre>
+
+<hr>
+
+<h2>Response (res) Object</h2>
+<p>
+The <strong>res</strong> object is used to send response
+to the client.
+</p>
+
+<ul>
+  <li><code>res.write()</code> – send response data</li>
+  <li><code>res.end()</code> – end the response</li>
+</ul>
+
+<hr>
+
+<h2>Setting Response Headers</h2>
+<pre>
+res.writeHead(200, { "Content-Type": "text/html" });
+res.write("&lt;h1&gt;Welcome to Node Server&lt;/h1&gt;");
+res.end();
+</pre>
+
+<hr>
+
+<h2>Handling Different Routes</h2>
+<pre>
+const http = require("http");
+
+http.createServer((req, res) => {
+  if (req.url === "/") {
+    res.write("Home Page");
+  } else if (req.url === "/about") {
+    res.write("About Page");
+  } else {
+    res.write("404 Page Not Found");
+  }
+  res.end();
+}).listen(3000);
+</pre>
+
+<hr>
+
+<h2>Advantages of Node.js HTTP Server</h2>
+<ul>
+  <li>Fast and lightweight</li>
+  <li>Handles multiple requests efficiently</li>
+  <li>Uses non-blocking I/O</li>
+</ul>
+
+<hr>
+
+<h2>Summary</h2>
+<ul>
+  <li>HTTP module is used to create servers</li>
+  <li>createServer() creates a web server</li>
+  <li>req and res handle requests and responses</li>
+</ul>
+
+</body>
+</html>

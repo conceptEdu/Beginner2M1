@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 21 – MongoDB CRUD Operations</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<h1>Chapter 21: MongoDB CRUD Operations</h1>
+
+<h2>What is CRUD?</h2>
+<p>
+CRUD stands for <strong>Create, Read, Update, Delete</strong>.
+These are the four basic operations performed on database data.
+</p>
+
+<hr>
+
+<h2>1. Create Operation (Insert)</h2>
+<p>
+The create operation is used to insert documents into a collection.
+</p>
+
+<h3>Insert One Document</h3>
+<pre>
+db.students.insertOne({
+  name: "Amit",
+  age: 21,
+  course: "MERN"
+});
+</pre>
+
+<h3>Insert Multiple Documents</h3>
+<pre>
+db.students.insertMany([
+  { name: "Neha", age: 22, course: "MERN" },
+  { name: "Rahul", age: 20, course: "MEAN" }
+]);
+</pre>
+
+<hr>
+
+<h2>2. Read Operation (Find)</h2>
+<p>
+The read operation is used to retrieve data from a collection.
+</p>
+
+<h3>Find All Documents</h3>
+<pre>
+db.students.find();
+</pre>
+
+<h3>Find with Condition</h3>
+<pre>
+db.students.find({ age: 21 });
+</pre>
+
+<h3>Find One Document</h3>
+<pre>
+db.students.findOne({ name: "Amit" });
+</pre>
+
+<hr>
+
+<h2>3. Update Operation</h2>
+<p>
+The update operation is used to modify existing documents.
+</p>
+
+<h3>Update One Document</h3>
+<pre>
+db.students.updateOne(
+  { name: "Amit" },
+  { $set: { age: 22 } }
+);
+</pre>
+
+<h3>Update Multiple Documents</h3>
+<pre>
+db.students.updateMany(
+  { course: "MERN" },
+  { $set: { status: "active" } }
+);
+</pre>
+
+<hr>
+
+<h2>4. Delete Operation</h2>
+<p>
+The delete operation is used to remove documents from a collection.
+</p>
+
+<h3>Delete One Document</h3>
+<pre>
+db.students.deleteOne({ name: "Rahul" });
+</pre>
+
+<h3>Delete Multiple Documents</h3>
+<pre>
+db.students.deleteMany({ course: "MEAN" });
+</pre>
+
+<hr>
+
+<h2>Important MongoDB Operators</h2>
+<ul>
+  <li><code>$set</code> – Update specific fields</li>
+  <li><code>$gt</code> – Greater than</li>
+  <li><code>$lt</code> – Less than</li>
+  <li><code>$in</code> – Match any value in array</li>
+</ul>
+
+<h3>Example Using Operators</h3>
+<pre>
+db.students.find({ age: { $gt: 20 } });
+</pre>
+
+<hr>
+
+<h2>Summary</h2>
+<ul>
+  <li>CRUD operations manage database data</li>
+  <li>MongoDB uses insert, find, update, delete</li>
+  <li>Operators help filter and update data</li>
+</ul>
+
+</body>
+</html>

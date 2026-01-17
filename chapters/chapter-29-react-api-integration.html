@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 29 – API Integration in React</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<h1>Chapter 29: API Integration in React (Fetch / Axios)</h1>
+
+<h2>What is API Integration?</h2>
+<p>
+API integration means connecting a React frontend
+with a backend server (Node.js / Express)
+to send and receive data using HTTP requests.
+</p>
+
+<hr>
+
+<h2>Why API Integration is Important?</h2>
+<ul>
+  <li>Fetch data from database</li>
+  <li>Submit form data to server</li>
+  <li>Build dynamic applications</li>
+  <li>Connect frontend with backend</li>
+</ul>
+
+<hr>
+
+<h2>Common HTTP Methods</h2>
+<ul>
+  <li>GET – Fetch data</li>
+  <li>POST – Send data</li>
+  <li>PUT – Update data</li>
+  <li>DELETE – Remove data</li>
+</ul>
+
+<hr>
+
+<h2>Using Fetch API</h2>
+<p>
+Fetch API is a built-in JavaScript method
+used to make HTTP requests.
+</p>
+
+<h3>GET Request Example</h3>
+<pre>
+useEffect(() => {
+  fetch("http://localhost:5000/api/users")
+    .then(res => res.json())
+    .then(data => setUsers(data));
+}, []);
+</pre>
+
+<h3>POST Request Example</h3>
+<pre>
+fetch("http://localhost:5000/api/users", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    name: "Amit",
+    email: "amit@gmail.com"
+  })
+});
+</pre>
+
+<hr>
+
+<h2>Handling Errors in Fetch</h2>
+<pre>
+fetch(url)
+  .then(res => {
+    if (!res.ok) {
+      throw new Error("Network error");
+    }
+    return res.json();
+  })
+  .catch(err => console.log(err));
+</pre>
+
+<hr>
+
+<h2>Using Axios</h2>
+<p>
+Axios is a popular third-party library
+used for making HTTP requests.
+It is easier and cleaner than Fetch.
+</p>
+
+<hr>
+
+<h2>Installing Axios</h2>
+<pre>
+npm install axios
+</pre>
+
+<hr>
+
+<h2>GET Request using Axios</h2>
+<pre>
+import axios from "axios";
+
+useEffect(() => {
+  axios.get("http://localhost:5000/api/users")
+    .then(res => setUsers(res.data));
+}, []);
+</pre>
+
+<hr>
+
+<h2>POST Request using Axios</h2>
+<pre>
+axios.post("http://localhost:5000/api/users", {
+  name: "Neha",
+  email: "neha@gmail.com"
+});
+</pre>
+
+<hr>
+
+<h2>PUT Request using Axios</h2>
+<pre>
+axios.put("http://localhost:5000/api/users/1", {
+  name: "Updated Name"
+});
+</pre>
+
+<hr>
+
+<h2>DELETE Request using Axios</h2>
+<pre>
+axios.delete("http://localhost:5000/api/users/1");
+</pre>
+
+<hr>
+
+<h2>Using JWT Token with Axios</h2>
+<pre>
+axios.get("/dashboard", {
+  headers: {
+    Authorization: token
+  }
+});
+</pre>
+
+<hr>
+
+<h2>Handling Loading & Error State</h2>
+<pre>
+const [loading, setLoading] = useState(true);
+const [error, setError] = useState(null);
+
+useEffect(() => {
+  axios.get(url)
+    .then(res => {
+      setData(res.data);
+      setLoading(false);
+    })
+    .catch(err => {
+      setError(err.message);
+      setLoading(false);
+    });
+}, []);
+</pre>
+
+<hr>
+
+<h2>Best Practices</h2>
+<ul>
+  <li>Use Axios for cleaner code</li>
+  <li>Handle loading and error states</li>
+  <li>Keep API logic in separate service files</li>
+</ul>
+
+<hr>
+
+<h2>Summary</h2>
+<ul>
+  <li>API integration connects frontend & backend</li>
+  <li>Fetch and Axios are used for HTTP requests</li>
+  <li>Axios simplifies request handling</li>
+</ul>
+
+</body>
+</html>

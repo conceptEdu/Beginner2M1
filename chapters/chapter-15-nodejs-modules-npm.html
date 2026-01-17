@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 15 – Node.js Modules & NPM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<h1>Chapter 15: Node.js Modules & NPM</h1>
+
+<h2>What are Modules?</h2>
+<p>
+Modules are reusable blocks of code that can be imported
+and used in different files. Node.js follows the
+<strong>CommonJS</strong> module system.
+</p>
+
+<hr>
+
+<h2>Types of Modules</h2>
+<ul>
+  <li>Built-in Modules</li>
+  <li>User-defined Modules</li>
+  <li>Third-party Modules</li>
+</ul>
+
+<hr>
+
+<h2>1. Built-in Modules</h2>
+<p>
+Node.js provides several built-in modules to perform
+common tasks.
+</p>
+
+<h3>Examples:</h3>
+<ul>
+  <li>fs – File System</li>
+  <li>http – Create web server</li>
+  <li>path – File path handling</li>
+  <li>os – Operating system info</li>
+</ul>
+
+<hr>
+
+<h2>Using require()</h2>
+<pre>
+const fs = require("fs");
+</pre>
+
+<hr>
+
+<h2>Creating User-defined Module</h2>
+
+<h3>math.js</h3>
+<pre>
+function add(a, b) {
+  return a + b;
+}
+
+module.exports = add;
+</pre>
+
+<h3>app.js</h3>
+<pre>
+const add = require("./math");
+console.log(add(5, 3));
+</pre>
+
+<hr>
+
+<h2>Exporting Multiple Functions</h2>
+<pre>
+module.exports = {
+  add,
+  subtract
+};
+</pre>
+
+<hr>
+
+<h2>What is NPM?</h2>
+<p>
+NPM (Node Package Manager) is used to install,
+manage, and share Node.js packages.
+</p>
+
+<hr>
+
+<h2>Initializing a Project</h2>
+<pre>
+npm init
+</pre>
+
+<hr>
+
+<h2>Installing Packages</h2>
+
+<h3>Local Installation</h3>
+<pre>
+npm install express
+</pre>
+
+<h3>Global Installation</h3>
+<pre>
+npm install -g nodemon
+</pre>
+
+<hr>
+
+<h2>package.json</h2>
+<p>
+The <code>package.json</code> file stores project information
+and dependencies.
+</p>
+
+<hr>
+
+<h2>Using nodemon</h2>
+<pre>
+nodemon app.js
+</pre>
+
+<hr>
+
+<h2>Summary</h2>
+<ul>
+  <li>Modules make code reusable</li>
+  <li>require() imports modules</li>
+  <li>NPM manages third-party packages</li>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 26 – React Components, Props & State</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<h1>Chapter 26: React Components, Props & State</h1>
+
+<h2>React Components</h2>
+<p>
+Components are the building blocks of a React application.
+Each component represents a part of the user interface
+and can be reused multiple times.
+</p>
+
+<hr>
+
+<h2>Types of Components</h2>
+<ul>
+  <li>Functional Components</li>
+  <li>Class Components</li>
+</ul>
+
+<hr>
+
+<h2>Functional Components</h2>
+<p>
+Functional components are simple JavaScript functions
+that return JSX. They are the most commonly used components
+in modern React.
+</p>
+
+<h3>Example:</h3>
+<pre>
+function Welcome() {
+  return <h2>Welcome to React</h2>;
+}
+
+export default Welcome;
+</pre>
+
+<hr>
+
+<h2>Class Components</h2>
+<p>
+Class components are ES6 classes that extend React.Component.
+They were used earlier but are now mostly replaced
+by functional components with hooks.
+</p>
+
+<h3>Example:</h3>
+<pre>
+import React, { Component } from "react";
+
+class Welcome extends Component {
+  render() {
+    return <h2>Welcome to React</h2>;
+  }
+}
+
+export default Welcome;
+</pre>
+
+<hr>
+
+<h2>What are Props?</h2>
+<p>
+Props (properties) are used to pass data from a parent
+component to a child component. Props are read-only.
+</p>
+
+<hr>
+
+<h2>Passing Props</h2>
+<pre>
+// Parent Component
+function App() {
+  return <Student name="Amit" course="MERN" />;
+}
+
+// Child Component
+function Student(props) {
+  return (
+    <p>
+      Name: {props.name}, Course: {props.course}
+    </p>
+  );
+}
+</pre>
+
+<hr>
+
+<h2>Props Destructuring</h2>
+<pre>
+function Student({ name, course }) {
+  return <p>{name} - {course}</p>;
+}
+</pre>
+
+<hr>
+
+<h2>What is State?</h2>
+<p>
+State is a built-in React object used to store
+and manage component data that can change over time.
+When state changes, the component re-renders.
+</p>
+
+<hr>
+
+<h2>useState Hook</h2>
+<p>
+The <code>useState</code> hook is used to add state
+to functional components.
+</p>
+
+<h3>Syntax:</h3>
+<pre>
+const [state, setState] = useState(initialValue);
+</pre>
+
+<hr>
+
+<h2>useState Example</h2>
+<pre>
+import { useState } from "react";
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>
+        Increment
+      </button>
+    </>
+  );
+}
+</pre>
+
+<hr>
+
+<h2>Difference Between Props and State</h2>
+<table border="1" cellpadding="8">
+  <tr>
+    <th>Props</th>
+    <th>State</th>
+  </tr>
+  <tr>
+    <td>Passed from parent</td>
+    <td>Managed inside component</td>
+  </tr>
+  <tr>
+    <td>Read-only</td>
+    <td>Can be changed</td>
+  </tr>
+</table>
+
+<hr>
+
+<h2>Summary</h2>
+<ul>
+  <li>Components build the UI</li>
+  <li>Props pass data to components</li>
+  <li>State manages dynamic data</li>
+  <li>useState is used in functional components</li>
+</ul>
+
+</body>
+</html>
