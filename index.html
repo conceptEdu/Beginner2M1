@@ -1,41 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
-<<<<<<< HEAD
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1> I am very tired</h1>
-    <p>🔄 Git Workflow दो हिस्सों में बाँटा जा सकता है
-1. पहली बार setup (one‑time steps)
-ये सिर्फ शुरुआत में करने होते हैं:
-- git init या git clone <repo-url> → repo बनाना या लाना
-- git remote add origin <repo-url> → GitHub से connect करना
-- git branch -M main → branch का नाम fix करना
-- git config --global user.name "Your Name"
-- git config --global user.email "YourEmail@example.com"
-👉 ये steps बार‑बार नहीं करने पड़ते। एक बार सही setup हो गया तो बस आगे workflow आसान हो जाता है।
-
-2. Daily workflow (हर बार changes के बाद)
-ये steps हर बार करने पड़ते हैं जब आप नई file बनाते हैं या code बदलते हैं:
-- git add . → changes stage करना
-- git commit -m "message" → commit करना
-- git push origin main → GitHub पर भेजना
-👉 यही तीन steps बार‑बार repeat होते हैं।
-
-✅ Summary
-- Setup steps → सिर्फ पहली बार
-- Add → Commit → Push → हर बार जब आप changes करते हैं
-
-⚡ Shortcut याद रखने के लिए:
-ACP = Add → Commit → Push
-</p>
-</body>
-</html>
-=======
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MERN Stack Web Notes</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -43,65 +10,88 @@ ACP = Add → Commit → Push
 
 <div class="container">
 
-  <!-- Sidebar -->
   <aside class="sidebar">
-  <h2>MERN Stack</h2>
-  <ul>
-    <!-- JavaScript -->
-    <li><a href="chapters/chapter-1-mern-introduction.html" target="content">Chapter 1 – MERN Introduction</a></li>
-    <li><a href="chapters/chapter-2-introduction-to-javascript.html" target="content">Chapter 2 – JavaScript Introduction</a></li>
-    <li><a href="chapters/chapter-3-javascript-variables.html" target="content">Chapter 3 – Variables</a></li>
-    <li><a href="chapters/chapter-4-javascript-data-types.html" target="content">Chapter 4 – Data Types</a></li>
-    <li><a href="chapters/chapter-5-javascript-operators.html" target="content">Chapter 5 – Operators</a></li>
-    <li><a href="chapters/chapter-6-javascript-control-statements.html" target="content">Chapter 6 – Control Statements</a></li>
-    <li><a href="chapters/chapter-7-javascript-loops-jump.html" target="content">Chapter 7 – Loops & Jump</a></li>
-    <li><a href="chapters/chapter-8-javascript-functions.html" target="content">Chapter 8 – Functions</a></li>
-    <li><a href="chapters/chapter-9-javascript-arrays-objects.html" target="content">Chapter 9 – Arrays & Objects</a></li>
-    <li><a href="chapters/chapter-10-javascript-string-math-methods.html" target="content">Chapter 10 – String & Math</a></li>
-    <li><a href="chapters/chapter-11-javascript-date-dom.html" target="content">Chapter 11 – Date & DOM</a></li>
-    <li><a href="chapters/chapter-12-dom-events.html" target="content">Chapter 12 – DOM Events</a></li>
-    <li><a href="chapters/chapter-13-js-form-validation-error-handling.html" target="content">Chapter 13 – Form Validation</a></li>
+    <h2>MERN Stack</h2>
+    <ul id="chapterList">
+      <li><a href="chapters/chapter-1-mern-introduction.html" target="content" class="active">Chapter 1 – MERN Introduction</a></li>
+      <li><a href="chapters/chapter-2-introduction-to-javascript.html" target="content">Chapter 2 – JS Introduction</a></li>
+      <li><a href="chapters/chapter-3-javascript-variables.html" target="content">Chapter 3 – Variables</a></li>
+      <li><a href="chapters/chapter-4-javascript-data-types.html" target="content">Chapter 4 – Data Types</a></li>
+      <li><a href="chapters/chapter-5-javascript-operators.html" target="content">Chapter 5 – Operators</a></li>
+      <li><a href="chapters/chapter-6-javascript-control-statements.html" target="content">Chapter 6 – Control Statements</a></li>
+      <li><a href="chapters/chapter-7-javascript-loops-jump.html" target="content">Chapter 7 – Loops & Jump</a></li>
+      <li><a href="chapters/chapter-8-javascript-functions.html" target="content">Chapter 8 – Functions</a></li>
+      <li><a href="chapters/chapter-9-javascript-arrays-objects.html" target="content">Chapter 9 – Arrays & Objects</a></li>
+      <li><a href="chapters/chapter-10-javascript-string-math-methods.html" target="content">Chapter 10 – String & Math</a></li>
+      <li><a href="chapters/chapter-11-javascript-date-dom.html" target="content">Chapter 11 – Date & DOM</a></li>
+      <li><a href="chapters/chapter-12-dom-events.html" target="content">Chapter 12 – DOM Events</a></li>
+      <li><a href="chapters/chapter-13-js-form-validation-error-handling.html" target="content">Chapter 13 – Form Validation</a></li>
+      <li><a href="chapters/chapter-14-introduction-to-nodejs.html" target="content">Chapter 14 – Node.js Intro</a></li>
+      <li><a href="chapters/chapter-15-nodejs-modules-npm.html" target="content">Chapter 15 – Modules & NPM</a></li>
+      <li><a href="chapters/chapter-16-nodejs-http-server.html" target="content">Chapter 16 – HTTP Server</a></li>
+      <li><a href="chapters/chapter-17-introduction-to-expressjs.html" target="content">Chapter 17 – Express Intro</a></li>
+      <li><a href="chapters/chapter-18-express-middleware-static-files.html" target="content">Chapter 18 – Middleware</a></li>
+      <li><a href="chapters/chapter-19-express-routing-rest-api.html" target="content">Chapter 19 – REST API</a></li>
+      <li><a href="chapters/chapter-20-mongodb-introduction-nosql.html" target="content">Chapter 20 – MongoDB Intro</a></li>
+      <li><a href="chapters/chapter-21-mongodb-crud-operations.html" target="content">Chapter 21 – MongoDB CRUD</a></li>
+      <li><a href="chapters/chapter-22-mongoose-introduction-schema.html" target="content">Chapter 22 – Mongoose Intro</a></li>
+      <li><a href="chapters/chapter-23-mongoose-crud-operations.html" target="content">Chapter 23 – Mongoose CRUD</a></li>
+      <li><a href="chapters/chapter-24-authentication-authorization-jwt.html" target="content">Chapter 24 – Authentication (JWT)</a></li>
+      <li><a href="chapters/chapter-25-reactjs-introduction-setup.html" target="content">Chapter 25 – React Intro</a></li>
+      <li><a href="chapters/chapter-26-react-components-props-state.html" target="content">Chapter 26 – Props & State</a></li>
+      <li><a href="chapters/chapter-27-react-hooks-useeffect.html" target="content">Chapter 27 – Hooks</a></li>
+      <li><a href="chapters/chapter-28-react-routing.html" target="content">Chapter 28 – Routing</a></li>
+      <li><a href="chapters/chapter-29-react-api-integration.html" target="content">Chapter 29 – API Integration</a></li>
+      <li><a href="chapters/chapter-30-mern-project-structure-deployment.html" target="content">Chapter 30 – Deployment</a></li>
+      <li><a href="chapters/chapter-31-mern-project-GitHub.html" target="content">Chapter 31 – GitHub</a></li>
+    </ul>
+  </aside>
 
-    <!-- Node.js -->
-    <li><a href="chapters/chapter-14-introduction-to-nodejs.html" target="content">Chapter 14 – Node.js Intro</a></li>
-    <li><a href="chapters/chapter-15-nodejs-modules-npm.html" target="content">Chapter 15 – Modules & NPM</a></li>
-    <li><a href="chapters/chapter-16-nodejs-http-server.html" target="content">Chapter 16 – HTTP Server</a></li>
-
-    <!-- Express -->
-    <li><a href="chapters/chapter-17-introduction-to-expressjs.html" target="content">Chapter 17 – Express Intro</a></li>
-    <li><a href="chapters/chapter-18-express-middleware-static-files.html" target="content">Chapter 18 – Middleware</a></li>
-    <li><a href="chapters/chapter-19-express-routing-rest-api.html" target="content">Chapter 19 – REST API</a></li>
-
-    <!-- MongoDB -->
-    <li><a href="chapters/chapter-20-mongodb-introduction-nosql.html" target="content">Chapter 20 – MongoDB Intro</a></li>
-    <li><a href="chapters/chapter-21-mongodb-crud-operations.html" target="content">Chapter 21 – MongoDB CRUD</a></li>
-
-    <!-- Mongoose -->
-    <li><a href="chapters/chapter-22-mongoose-introduction-schema.html" target="content">Chapter 22 – Mongoose Intro</a></li>
-    <li><a href="chapters/chapter-23-mongoose-crud-operations.html" target="content">Chapter 23 – Mongoose CRUD</a></li>
-
-    <!-- Auth -->
-    <li><a href="chapters/chapter-24-authentication-authorization-jwt.html" target="content">Chapter 24 – Authentication (JWT)</a></li>
-
-    <!-- React -->
-    <li><a href="chapters/chapter-25-reactjs-introduction-setup.html" target="content">Chapter 25 – React Intro</a></li>
-    <li><a href="chapters/chapter-26-react-components-props-state.html" target="content">Chapter 26 – Props & State</a></li>
-    <li><a href="chapters/chapter-27-react-hooks-useeffect.html" target="content">Chapter 27 – Hooks</a></li>
-    <li><a href="chapters/chapter-28-react-routing.html" target="content">Chapter 28 – Routing</a></li>
-    <li><a href="chapters/chapter-29-react-api-integration.html" target="content">Chapter 29 – API Integration</a></li>
-
-    <!-- Deployment -->
-    <li><a href="chapters/chapter-30-mern-project-structure-deployment.html" target="content">Chapter 30 – Deployment</a></li>
-  </ul>
-</aside>
-
-  <!-- Main Content -->
   <main class="content">
-    <iframe name="content"></iframe>
+    <iframe name="content" id="contentFrame" src="chapters/chapter-1-mern-introduction.html"></iframe>
+    
+    <div class="navigation-buttons">
+      <button onclick="navigate('prev')">← Previous</button>
+      <button onclick="navigate('next')">Next →</button>
+    </div>
   </main>
 
 </div>
 
+<script>
+  function navigate(direction) {
+    const links = Array.from(document.querySelectorAll('.sidebar ul li a'));
+    const iframe = document.getElementById('contentFrame');
+    
+    // वर्तमान में जो फाइल खुली है उसका नाम निकालें
+    const currentPath = iframe.contentWindow.location.pathname;
+    const currentFile = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+
+    // वर्तमान लिंक का इंडेक्स ढूंढें
+    let currentIndex = links.findIndex(link => link.getAttribute('href').includes(currentFile));
+
+    if (direction === 'next' && currentIndex < links.length - 1) {
+      links[currentIndex + 1].click();
+      updateActiveLink(links[currentIndex + 1]);
+    } else if (direction === 'prev' && currentIndex > 0) {
+      links[currentIndex - 1].click();
+      updateActiveLink(links[currentIndex - 1]);
+    }
+  }
+
+  // साइडबार में सिलेक्टेड चैप्टर को हाईलाइट करने के लिए
+  function updateActiveLink(activeLink) {
+    document.querySelectorAll('.sidebar ul li a').forEach(link => link.classList.remove('active'));
+    activeLink.classList.add('active');
+  }
+
+  // अगर साइडबार लिंक पर डायरेक्ट क्लिक करें तो भी हाईलाइट बदल जाए
+  document.querySelectorAll('.sidebar ul li a').forEach(link => {
+    link.addEventListener('click', function() {
+      updateActiveLink(this);
+    });
+  });
+</script>
+
 </body>
 </html>
->>>>>>> 5787db2 (My MERN stack notes uploaded)
